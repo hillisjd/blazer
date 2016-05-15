@@ -1,5 +1,6 @@
 <div id="queries">
   <div id="header" style="margin-bottom: 20px;">
+
     <div class="btn-group pull-right">
       <%= link_to "New Query", new_query_path, class: "btn btn-info" %>
       <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -15,26 +16,78 @@
       </ul>
     </div>
     <input type="text" placeholder="Start typing a query or person" style="width: 300px; display: inline-block;" autofocus=true class="search form-control" />
+
+    <hr>
+
+    <ul class="nav nav-tabs">
+        <li class="active">
+          <a href="#home" data-target="#all" data-toggle="tab">All</a>
+        </li>
+        <li>
+          <a href="#profile" data-target="#mine" data-toggle="tab">Mine</a>
+        </li>
+    </ul>
+
   </div>
 
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th style="width: 20%; text-align: right;">Mastermind</th>
-      </tr>
-    </thead>
-    <tbody class="list">
-      <tr id="search-item">
-        <td>
-          <span class="name"></span>
-          <span class="vars"></span>
-          <span class="hide"></span>
-        </td>
-        <td class="creator"></td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="tab-content">
+    <div class="tab-pane active fade in" id="all">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+
+            <!-- Playing around -->
+            <th style="width: 20%; text-align: right;" data-sort="string-ins">
+                Mastermind
+                <span class="glyphicon glyphicon-sort-by-alphabet"></span>
+                <span class="glyphicon glyphicon-sort-by-alphabet-alt"></span>
+            </th>
+
+            <!-- Current version -->
+            <!-- <th style="width: 20%; text-align: right;">
+              Mastermind
+            </th> -->
+
+          </tr>
+        </thead>
+
+        <tbody class="list">
+          <tr id="search-item">
+            <td>
+              <span class="name"></span>
+              <span class="vars"></span>
+              <span class="hide"></span>
+            </td>
+            <td class="creator"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tab-pane" id="mine">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+
+          </tr>
+        </thead>
+
+        <tbody class="list">
+          <tr id="search-item">
+            <td>
+              <span class="name"></span>
+              <span class="vars"></span>
+              <span class="hide"></span>
+            </td>
+            <td class="creator"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
 </div>
 
 <script>
